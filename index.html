@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delicias Amanda | Catálogo y Menú</title>
+  <meta name="description" content="Catálogo de desayunos sorpresa, vinos y decoración. Menú completo y cotización por WhatsApp." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#inicio">
+        <img src="assets/Delicias_Amanda_L.png" alt="Logo Delicias Amanda" class="brand__logo">
+        <span>Delicias Amanda</span>
+      </a>
+
+      <nav class="menu">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#galeria">Galería</a>
+        <a href="#menus-pdf">Menús 2026</a>
+        <a href="#menu-completo">Menú completo</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--sm" href="#cotizador">Cotizar</a>
+      </nav>
+
+      <button class="burger" aria-label="Abrir menú" id="burger">☰</button>
+    </div>
+
+    <div class="mobile" id="mobile">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#galeria">Galería</a>
+      <a href="#menus-pdf">Menús PDF</a>
+      <a href="#menu-completo">Menú completo</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#faq">FAQ</a>
+      <a href="#cotizador">Cotizar</a>
+    </div>
+  </header>
+
+  <main id="inicio" class="hero">
+    <div class="container hero__grid">
+      <section class="hero__text">
+        <p class="badge">Bogotá • Entregas programadas</p>
+        <h1>Gourmet y catering: <span class="grad">Detalle,</span> <span class="grad">sabor</span> <span class="grad">y presencia</span></h1>
+        <p class="lead">
+          Desayunos, Almuerzos, Refrigerios, Cenas, Desayunos Sorpresa, Pasabocas, Platos Intermedios, bebidas, entradas y platos para eventos. Cotiza en 1 minuto por WhatsApp.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn" id="btnHeroWA" href="#">Cotizar por WhatsApp</a>
+          <a class="btn btn--ghost" href="#catalogo">Ver catálogo</a>
+        </div>
+
+        <div class="trust">
+          <div class="trust__item"><strong>✔</strong> Personalizable</div>
+          <div class="trust__item"><strong>✔</strong> Eventos corporativos</div>
+          <div class="trust__item"><strong>✔</strong> Reserva fácil</div>
+        </div>
+      </section>
+
+      <aside class="hero__card" id="cotizador">
+        <div class="card">
+          <div class="media heroSlider" id="heroSlider">
+            <img id="heroSlideImg" src="assets/hero/1.jpeg" alt="Foto destacada" loading="lazy" />
+            <div class="heroSlider__dots" id="heroDots"></div>
+          </div>
+          <h3>Arma tu pedido</h3>
+          <p class="muted">Selecciona un producto del catálogo o escribe lo que necesitas.</p>
+          <div id="pickedProduct" class="pickedProduct is-empty">
+          Aún no has seleccionado un producto del catálogo.
+          </div>
+          <label class="label">*Producto o servicio</label>
+          <input
+            id="productoManual"
+            class="input"
+            type="text"
+            placeholder="Ej: desayuno sorpresa, catering para 30 personas, decoración, pasabocas..."
+           /> 
+
+
+          <label class="label">*Ocasión</label>
+          <select id="ocasion" class="input">
+            <option value="">Selecciona una ocasión</option>
+            <option>Baby Shower</option>
+            <option>Bautizo</option>
+            <option>Primera Comunión</option>
+            <option>Confirmación</option>
+            <option>Fiesta de 15 años</option>
+            <option>Grados</option>
+            <option>Matrimonio</option>
+            <option>Cumpleaños</option>
+            <option>Eventos familiares</option>
+            <option>Eventos empresariales</option>
+            <option>Fechas conmemorativas</option>
+            <option>Otros</option>
+          </select>
+
+          <label class="label">*Fecha</label>
+          <input id="fecha" class="input" type="date" />
+
+          <label class="label">*Barrio / Zona</label>
+          <input id="zona" class="input" type="text" placeholder="Ej: Suba, Chapinero, Kennedy..." />
+
+          <label class="label">Notas</label>
+          <textarea id="notas" class="input" rows="3" placeholder="Cantidad de personas, presupuesto, etc."></textarea>
+
+          <button class="btn btn--full" id="btnCardWA">Enviar cotización</button>
+          <p class="tiny muted">Al enviar, se abrirá WhatsApp con un mensaje pre-llenado.</p>
+
+          <p class="tiny muted" style="margin-top:10px">
+            Bebidas con alcohol: venta/servicio solo a mayores de edad y según normas locales.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section id="catalogo" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Catálogo</h2>
+      </div>
+
+      <div class="filters">
+        <button class="chip is-active" data-filter="all">Todo</button>
+        <button class="chip" data-filter="desayuno">Desayunos</button>
+        <button class="chip" data-filter="vino">Vinos</button>
+        <button class="chip" data-filter="decoracion">Decoración</button>
+        <button class="chip" data-filter="postres">Postres</button>
+        <button class="chip" data-filter="tortas">Tortas</button>
+        <button class="chip" data-filter="ponques">Ponques</button>
+      </div>
+
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="galeria" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Galería</h2>
+        <p class="muted frase-bold">Fotos de decoraciones y platos (toca para ampliar).</p>
+      </div>
+
+      <div class="filters">
+        <button class="chip is-active" data-gfilter="all">Todo</button>
+        <button class="chip" data-gfilter="decoracion">Decoración</button>
+        <button class="chip" data-gfilter="platos">Platos</button>
+        <button class="chip" data-gfilter="bebidas">Bebidas</button>
+        <button class="chip" data-gfilter="desayuno">Desayuno</button>
+      </div>
+
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="1"></div>
+    <div class="modal__content" role="dialog" aria-modal="true">
+      <button class="modal__close" data-close="1" aria-label="Cerrar">✕</button>
+      <button class="modal__nav modal__prev" type="button" data-nav="prev" aria-label="Anterior">‹</button>
+      <button class="modal__nav modal__next" type="button" data-nav="next" aria-label="Siguiente">›</button>
+      <div class="modal__tools">
+        <button class="tool" type="button" data-zoom="-">−</button>
+        <button class="tool" type="button" data-zoom="reset">Reset</button>
+        <button class="tool" type="button" data-zoom="+">+</button>
+      </div>
+      <img id="modalImg" alt="" />
+      <div class="modal__caption" id="modalCap"></div>
+    </div>
+  </div>
+
+  
+  <section id="menus-pdf" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Menús 2026</h2>
+        <p class="muted frase-bold">Ábrelos o descárgalos. Ideal para compartir por WhatsApp.</p>
+      </div>
+
+      <div class="menuTools">
+        <input id="pdfSearch" class="input" type="search" placeholder="Buscar: asados, brunch, ensaladas, postres..." />
+        <div class="filters" id="pdfCats"></div>
+      </div>
+
+      <div id="pdfList" class="pdfGrid"></div>
+
+      <p class="tiny muted frase-bold" style="margin-top:12px">
+        Bebidas con alcohol: venta/servicio solo a mayores de edad y según normas locales.
+      </p>
+    </div>
+  </section>
+
+<section id="menu-completo" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Menú completo</h2>
+        <p class="muted frase-bold">Contenido cargado desde el documento (busca por palabra).</p>
+      </div>
+
+      <div class="menuTools">
+        <input id="menuSearch" class="input" type="search" placeholder="Buscar: quiche, ensalada, vino, arroz..." />
+        <div class="filters" id="menuCats"></div>
+      </div>
+
+      <div id="menuList" class="menuList"></div>
+    </div>
+  </section>
+
+<section id="como-funciona" class="section">
+  <div class="container">
+    <div class="section__head">
+      <h2>Cómo funciona</h2>
+      <p class="muted">En 3 pasos, sin enredos.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <div class="step__num">1</div>
+        <h3>Elige</h3>
+        <p class="muted">Escoge del catálogo o del menú completo.</p>
+      </article>
+
+      <article class="step">
+        <div class="step__num">2</div>
+        <h3>Personaliza</h3>
+        <p class="muted">Cantidad, dedicatoria, colores y presupuesto.</p>
+      </article>
+
+      <article class="step">
+        <div class="step__num">3</div>
+        <h3>Entrega</h3>
+        <p class="muted">Coordinamos fecha, zona y confirmación.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- =========================
+       NOSOTROS
+  ========================= -->
+  <section id="nosotros" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Nosotros</h2>
+        <p class="muted frase-bold">Nuestra misión, visión, valores y el equipo que hace posible cada evento.</p>
+      </div>
+
+      <!-- NUESTRA PASIÓN -->
+      <div class="about">
+        <div class="about__text">
+          <h3 class="about__title">NUESTRA PASIÓN</h3>
+
+          <h4 class="about__subtitle">Nuestra misión</h4>
+          <p class="muted">
+            Brindar experiencias gastronómicas memorables con un servicio cercano,
+            impecable y personalizado, cuidando cada detalle en nuestros eventos.
+          </p>
+
+          <h4 class="about__subtitle">Nuestra visión</h4>
+          <p class="muted">
+            Ser una marca reconocida por su excelencia, innovación y confianza,
+            acompañando a nuestros clientes en momentos especiales en Colombia.
+          </p>
+
+          <h4 class="about__subtitle">Valores</h4>
+          <ul class="about__list">
+            <li><strong>Calidad:</strong> ingredientes y preparación con estándar alto.</li>
+            <li><strong>Responsabilidad:</strong> puntualidad, orden y cumplimiento.</li>
+            <li><strong>Cercanía:</strong> atención humana y asesoría real.</li>
+            <li><strong>Pasión:</strong> amor por lo que hacemos en cada plato.</li>
+          </ul>
+        </div>
+
+        <div class="about__media">
+          <!-- Cambia esta ruta por tu foto real -->
+          <img class="about__img" src="assets/thumbs/Mesa.jpeg" alt="Montaje de evento y mesa decorada" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- NUESTRO CHEF -->
+      <div class="about about--reverse" style="margin-top:26px;">
+        <div class="about__text">
+          <h3 class="about__title">NUESTRA FUNDADORA</h3>
+          <p class="muted">
+            <strong>Luz Amanda Bermúdez</strong>, Administradora de Empresas y fundadora de
+            <strong>Delicias Amanda S.A.S</strong> en Bogotá.
+          </p>
+          <p class="muted">
+          Desde el año <strong>2000</strong> inició este camino trabajando con producciones y equipos de
+          <strong>canales de televisión</strong> como <strong>RTVC</strong>, <strong>Canal Capital</strong>,
+          <strong>  Canal Institucional</strong> y <strong>Canal Uno</strong>, apoyando a productores y proyectos en general.
+          Con el tiempo, amplió su servicio a <strong>eventos sociales, empresariales y familiares</strong> como
+          <strong>bautizos, matrimonios, cumpleaños</strong> y celebraciones especiales.
+          </p>
+
+          <p class="muted">
+          Su compromiso se basa en el trabajo <strong>honesto e íntegro</strong>: comunicación clara, cumplimiento de lo acordado
+          y cuidado de cada detalle. Hoy se enorgullece de contar con un <strong>equipo de trabajo humano y técnico</strong> que le permite
+          prestar un servicio organizado, puntual y de alta calidad, ofreciendo desayunos, almuerzos, cenas, catering, postres, ponques, tortas y  todo lo relacionado con el servicio de alimentación, además de servicio de cristalería, vajilla, menaje, decoración y más, para que cada experiencia sea confiable y memorable.
+          </p>
+          <a class="btn" href="#contacto">Cotizar por WhatsApp</a>
+        </div>
+
+        <div class="about__media">
+          <!-- Cambia esta ruta por tu foto real -->
+          <img class="about__img" src="assets/thumbs/Perfil.png" alt="Foto de nuestro chef" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="faq" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Preguntas frecuentes</h2>
+        <p class="muted frase-bold">Lo típico antes de comprar.</p>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>¿Con cuánta anticipación debo pedir?</summary>
+          <p>Idealmente 24–48 horas. Si es urgente, escríbenos y revisamos disponibilidad.</p>
+        </details>
+        <details>
+          <summary>¿Se puede personalizar el menú?</summary>
+          <p>Sí. Según gustos, alergias y presupuesto.</p>
+        </details>
+        <details>
+          <summary>¿En qué zonas entregan?</summary>
+          <p>Bogotá y alrededores (según disponibilidad). Confírmanos tu zona para cotizar domicilio.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       CONTACTO (único)
+  ========================= -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Contacto</h2>
+        <p class="muted frase-bold">Escríbenos por WhatsApp o envíanos los detalles y te respondemos con opciones.</p>
+      </div>
+
+      <div class="contact">
+        <!-- Columna izquierda -->
+        <div>
+          <h3 style="margin:0 0 6px;">Datos de contacto</h3>
+          <p class="muted" style="margin-top:0;">
+            Bogotá • Entregas programadas • Eventos corporativos y personalizados
+          </p>
+
+          <div class="contact__cards">
+            <div class="mini">
+              <h4>WhatsApp</h4>
+              <p class="muted">Respuesta rápida</p>
+              <!-- Mantengo tu id para que script.js lo use -->
+              <a class="btn btn--sm" id="btnFooterWA" href="#">Abrir WhatsApp</a>
+            </div>
+
+            <div class="mini">
+              <h4>Horario</h4>
+              <p class="muted">L–S: 9am–7pm</p>
+            </div>
+
+            <div class="mini">
+              <h4>Email</h4>
+              <p class="muted">
+                <a href="mailto:Deliciasamanda028@yahoo.es">Deliciasamanda028@yahoo.es</a>
+              </p>
+            </div>
+          </div>
+
+          <p class="tiny muted" style="margin-top:12px">
+            Bebidas con alcohol: venta/servicio solo a mayores de edad y según normas locales.
+          </p>
+        </div>
+
+        <!-- Columna derecha: tu formulario (igual, pero limpio) -->
+        <div class="card">
+          <h3>Mensaje rápido</h3>
+          <label class="label">*Nombre</label>
+          <input id="nombre" class="input" type="text" placeholder="Tu nombre" />
+
+          <label class="label">*Qué necesitas</label>
+          <input id="necesidad" class="input" type="text" placeholder="Desayuno, refrigerio, evento..." />
+
+          <label class="label">Detalles</label>
+          <textarea id="detalle" class="input" rows="4" placeholder="Fecha, zona, cantidad de personas, etc."></textarea>
+
+          <button class="btn btn--full" id="btnFormWA">Enviar por WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a class="fab" id="fabWA" href="#" aria-label="WhatsApp">
+    WhatsApp
+  </a>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="muted">© <span id="year"></span> Delicias Amanda.</p>
+      <p class="muted">Catálogo • Menú • Cotización por WhatsApp</p>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
