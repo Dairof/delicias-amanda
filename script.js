@@ -1,7 +1,7 @@
 import { MENU, DOC_NOTES } from './menuData.js';
 import { PDF_MENUS, PDF_CATEGORIES } from './pdfIndex.js';
 
-const PHONE = "57" + "3165711441"; // Colombia +57
+const PHONE = "57" + "3102482193"; // Colombia +57
 const FALLBACK_IMG = "assets/placeholders/food.svg";
 
 const products = [
